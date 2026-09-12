@@ -1,0 +1,181 @@
+{
+  "source": "\runs/full-2026-08-20/scored.jsonl",
+  "n_runs": 960,
+  "n_tasks": 48,
+  "marginal_effects": {
+    "unit": "task (with all repetitions attached)",
+    "resamples_requested": 5000,
+    "resamples_dropped": 0,
+    "coding": "success_strict",
+    "architecture": {
+      "point": 0.15625,
+      "ci_low": 0.04994791666666662,
+      "ci_high": 0.2666666666666666,
+      "resamples": 5000
+    },
+    "deployment": {
+      "point": 0.29374999999999996,
+      "ci_low": 0.1645833333333333,
+      "ci_high": 0.4229687499999993,
+      "resamples": 5000
+    },
+    "arch_at_cloud": {
+      "point": 0.1791666666666667,
+      "ci_low": 0.050000000000000044,
+      "ci_high": 0.30833333333333335,
+      "resamples": 5000
+    },
+    "arch_at_local": {
+      "point": 0.13333333333333336,
+      "ci_low": 0.0,
+      "ci_high": 0.2708333333333333,
+      "resamples": 5000
+    },
+    "depl_in_deciding": {
+      "point": 0.31666666666666665,
+      "ci_low": 0.16666666666666674,
+      "ci_high": 0.4625,
+      "resamples": 5000
+    },
+    "depl_in_routing": {
+      "point": 0.2708333333333333,
+      "ci_low": 0.12083333333333335,
+      "ci_high": 0.42083333333333334,
+      "resamples": 5000
+    }
+  },
+  "marginal_effects_lenient": {
+    "unit": "task (with all repetitions attached)",
+    "resamples_requested": 5000,
+    "resamples_dropped": 0,
+    "coding": "success_lenient",
+    "architecture": {
+      "point": 0.09166666666666667,
+      "ci_low": -0.006249999999999978,
+      "ci_high": 0.19791666666666663,
+      "resamples": 5000
+    },
+    "deployment": {
+      "point": 0.29166666666666663,
+      "ci_low": 0.16453125,
+      "ci_high": 0.42083333333333334,
+      "resamples": 5000
+    },
+    "arch_at_cloud": {
+      "point": 0.11249999999999993,
+      "ci_low": -0.02083333333333326,
+      "ci_high": 0.2416666666666667,
+      "resamples": 5000
+    },
+    "arch_at_local": {
+      "point": 0.0708333333333333,
+      "ci_low": -0.04583333333333334,
+      "ci_high": 0.1958333333333333,
+      "resamples": 5000
+    },
+    "depl_in_deciding": {
+      "point": 0.3125,
+      "ci_low": 0.16666666666666663,
+      "ci_high": 0.45833333333333337,
+      "resamples": 5000
+    },
+    "depl_in_routing": {
+      "point": 0.27083333333333337,
+      "ci_low": 0.12083333333333335,
+      "ci_high": 0.425,
+      "resamples": 5000
+    }
+  },
+  "replication": {
+    "cell_task_pairs": 192,
+    "distinct_replies_per_pair": {
+      "1": 135,
+      "2": 14,
+      "3": 11,
+      "4": 15,
+      "5": 17
+    },
+    "fully_deterministic_pairs": 135,
+    "fraction_deterministic": 0.7031,
+    "note": "R=5 at temperature 0. Where a pair is fully deterministic the five repetitions are one observation recorded five times, so the effective replication is well below 960. This is why §9 resamples tasks and clusters on task."
+  },
+  "decision_to_success": {
+    "C1": {
+      "success_when_decision_correct": 0.8902,
+      "n_correct": 173,
+      "success_when_decision_wrong": 0.7015,
+      "n_wrong": 67
+    },
+    "C2": {
+      "success_when_decision_correct": 0.6667,
+      "n_correct": 120,
+      "success_when_decision_wrong": 0.375,
+      "n_wrong": 120
+    },
+    "C3": {
+      "success_when_decision_correct": 0.6919,
+      "n_correct": 172,
+      "success_when_decision_wrong": 0.5735,
+      "n_wrong": 68
+    },
+    "C4": {
+      "success_when_decision_correct": 0.65,
+      "n_correct": 100,
+      "success_when_decision_wrong": 0.2,
+      "n_wrong": 140
+    }
+  },
+  "difficulty": {
+    "per_category": {
+      "action": {
+        "arch_gap_cloud": 0.25,
+        "arch_gap_local": 0.25,
+        "depl_gap_deciding": 0.125,
+        "depl_gap_routing": 0.125,
+        "n": 160,
+        "n_tasks": 8
+      },
+      "clarification": {
+        "arch_gap_cloud": 0.125,
+        "arch_gap_local": 0.125,
+        "depl_gap_deciding": 0.75,
+        "depl_gap_routing": 0.75,
+        "n": 160,
+        "n_tasks": 8
+      },
+      "grounding": {
+        "arch_gap_cloud": 0.35,
+        "arch_gap_local": 0.55,
+        "depl_gap_deciding": 0.125,
+        "depl_gap_routing": 0.325,
+        "n": 160,
+        "n_tasks": 8
+      },
+      "reasoning": {
+        "arch_gap_cloud": 0.475,
+        "arch_gap_local": 0.0,
+        "depl_gap_deciding": 0.4,
+        "depl_gap_routing": -0.075,
+        "n": 160,
+        "n_tasks": 8
+      },
+      "robustness": {
+        "arch_gap_cloud": 0.0,
+        "arch_gap_local": 0.125,
+        "depl_gap_deciding": 0.375,
+        "depl_gap_routing": 0.5,
+        "n": 160,
+        "n_tasks": 8
+      },
+      "trivial": {
+        "arch_gap_cloud": -0.125,
+        "arch_gap_local": -0.25,
+        "depl_gap_deciding": 0.125,
+        "depl_gap_routing": 0.0,
+        "n": 160,
+        "n_tasks": 8
+      }
+    },
+    "note": "No numeric difficulty score exists in the task records, so no slope is fitted. Ordering categories by difficulty after seeing these numbers would be a post-hoc scale."
+  }
+}

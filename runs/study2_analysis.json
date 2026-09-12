@@ -1,0 +1,422 @@
+{
+  "coding": "success_strict",
+  "margin": 0.15,
+  "pairs_by_cloud_baseline": {
+    "sonnet": [
+      {
+        "on_device_model": "llama3.1-8b",
+        "cloud_baseline": "sonnet",
+        "n_tasks": 48,
+        "compensation": -0.04583333333333334,
+        "ci95": [
+          -0.19166666666666665,
+          0.10833333333333332
+        ],
+        "ci90": [
+          -0.1708333333333333,
+          0.07916666666666668
+        ],
+        "equivalent_at_margin": false,
+        "capability_gap": 0.2708333333333333,
+        "capability_gap_decision": 0.3,
+        "routing_success": 0.3875,
+        "deciding_success": 0.5208333333333334
+      },
+      {
+        "on_device_model": "qwen2.5-1.5b",
+        "cloud_baseline": "sonnet",
+        "n_tasks": 48,
+        "compensation": -0.1513888888888889,
+        "ci95": [
+          -0.29444444444444445,
+          -0.00972222222222222
+        ],
+        "ci90": [
+          -0.2722222222222222,
+          -0.030555555555555558
+        ],
+        "equivalent_at_margin": false,
+        "capability_gap": 0.1444444444444445,
+        "capability_gap_decision": 0.0708333333333333,
+        "routing_success": 0.5138888888888888,
+        "deciding_success": 0.5416666666666666
+      },
+      {
+        "on_device_model": "qwen2.5-3b",
+        "cloud_baseline": "sonnet",
+        "n_tasks": 48,
+        "compensation": -0.19999999999999998,
+        "ci95": [
+          -0.3708333333333333,
+          -0.03333333333333334
+        ],
+        "ci90": [
+          -0.3416666666666666,
+          -0.0625
+        ],
+        "equivalent_at_margin": false,
+        "capability_gap": -0.008333333333333304,
+        "capability_gap_decision": 0.0708333333333333,
+        "routing_success": 0.6666666666666666,
+        "deciding_success": 0.6458333333333334
+      },
+      {
+        "on_device_model": "llama3.2-3b",
+        "cloud_baseline": "sonnet",
+        "n_tasks": 48,
+        "compensation": -0.13749999999999998,
+        "ci95": [
+          -0.2916666666666667,
+          0.01677083333333183
+        ],
+        "ci90": [
+          -0.2708333333333333,
+          -0.00416666666666667
+        ],
+        "equivalent_at_margin": false,
+        "capability_gap": 0.2625,
+        "capability_gap_decision": 0.3,
+        "routing_success": 0.3958333333333333,
+        "deciding_success": 0.4375
+      },
+      {
+        "on_device_model": "qwen2.5-7b",
+        "cloud_baseline": "sonnet",
+        "n_tasks": 48,
+        "compensation": -0.15833333333333333,
+        "ci95": [
+          -0.2708333333333333,
+          -0.04583333333333334
+        ],
+        "ci90": [
+          -0.25416666666666665,
+          -0.06666666666666667
+        ],
+        "equivalent_at_margin": false,
+        "capability_gap": 0.033333333333333326,
+        "capability_gap_decision": 0.008333333333333304,
+        "routing_success": 0.625,
+        "deciding_success": 0.6458333333333334
+      },
+      {
+        "on_device_model": "mistral-7b",
+        "cloud_baseline": "sonnet",
+        "n_tasks": 48,
+        "compensation": -0.13749999999999998,
+        "ci95": [
+          -0.28753472222222226,
+          0.012499999999999992
+        ],
+        "ci90": [
+          -0.26388888888888884,
+          -0.0111111111111111
+        ],
+        "equivalent_at_margin": false,
+        "capability_gap": 0.2555555555555556,
+        "capability_gap_decision": 0.29305555555555557,
+        "routing_success": 0.40277777777777773,
+        "deciding_success": 0.4444444444444444
+      }
+    ],
+    "haiku": [
+      {
+        "on_device_model": "llama3.1-8b",
+        "cloud_baseline": "haiku",
+        "n_tasks": 48,
+        "compensation": 0.05694444444444446,
+        "ci95": [
+          -0.1013888888888889,
+          0.22364583333333285
+        ],
+        "ci90": [
+          -0.07638888888888888,
+          0.19583333333333333
+        ],
+        "equivalent_at_margin": false,
+        "capability_gap": 0.3,
+        "capability_gap_decision": 0.25694444444444436,
+        "routing_success": 0.3875,
+        "deciding_success": 0.5208333333333334
+      },
+      {
+        "on_device_model": "qwen2.5-1.5b",
+        "cloud_baseline": "haiku",
+        "n_tasks": 48,
+        "compensation": -0.048611111111111105,
+        "ci95": [
+          -0.19444444444444442,
+          0.09027777777777779
+        ],
+        "ci90": [
+          -0.16666666666666666,
+          0.06250000000000001
+        ],
+        "equivalent_at_margin": false,
+        "capability_gap": 0.17361111111111116,
+        "capability_gap_decision": 0.02777777777777768,
+        "routing_success": 0.5138888888888888,
+        "deciding_success": 0.5416666666666666
+      },
+      {
+        "on_device_model": "qwen2.5-3b",
+        "cloud_baseline": "haiku",
+        "n_tasks": 48,
+        "compensation": -0.09722222222222221,
+        "ci95": [
+          -0.22916666666666663,
+          0.02777777777777778
+        ],
+        "ci90": [
+          -0.20833333333333334,
+          0.0069444444444444475
+        ],
+        "equivalent_at_margin": false,
+        "capability_gap": 0.02083333333333337,
+        "capability_gap_decision": 0.02777777777777768,
+        "routing_success": 0.6666666666666666,
+        "deciding_success": 0.6458333333333334
+      },
+      {
+        "on_device_model": "llama3.2-3b",
+        "cloud_baseline": "haiku",
+        "n_tasks": 48,
+        "compensation": -0.03472222222222222,
+        "ci95": [
+          -0.17361111111111108,
+          0.10416666666666667
+        ],
+        "ci90": [
+          -0.14583333333333334,
+          0.08333333333333333
+        ],
+        "equivalent_at_margin": true,
+        "capability_gap": 0.2916666666666667,
+        "capability_gap_decision": 0.25694444444444436,
+        "routing_success": 0.3958333333333333,
+        "deciding_success": 0.4375
+      },
+      {
+        "on_device_model": "qwen2.5-7b",
+        "cloud_baseline": "haiku",
+        "n_tasks": 48,
+        "compensation": -0.05555555555555555,
+        "ci95": [
+          -0.1875,
+          0.07638888888888888
+        ],
+        "ci90": [
+          -0.15972222222222224,
+          0.05555555555555556
+        ],
+        "equivalent_at_margin": false,
+        "capability_gap": 0.0625,
+        "capability_gap_decision": -0.03472222222222232,
+        "routing_success": 0.625,
+        "deciding_success": 0.6458333333333334
+      },
+      {
+        "on_device_model": "mistral-7b",
+        "cloud_baseline": "haiku",
+        "n_tasks": 48,
+        "compensation": -0.03472222222222222,
+        "ci95": [
+          -0.15277777777777776,
+          0.0765624999999975
+        ],
+        "ci90": [
+          -0.13194444444444445,
+          0.0625
+        ],
+        "equivalent_at_margin": true,
+        "capability_gap": 0.28472222222222227,
+        "capability_gap_decision": 0.24999999999999994,
+        "routing_success": 0.40277777777777773,
+        "deciding_success": 0.4444444444444444
+      }
+    ]
+  },
+  "slope": {
+    "slope": 0.3074596774193549,
+    "n_pairs": 6,
+    "gap_measured_by": "capability_gap",
+    "resampling_unit": "task",
+    "n_tasks": 48,
+    "ci95": [
+      -0.038829678101902285,
+      0.7147975451196542
+    ],
+    "excludes_zero": false,
+    "note": "compensation regressed on the capability gap across pairs; the 48-task unit is resampled and every pair recomputed"
+  },
+  "slope_decision_axis": {
+    "slope": 0.2417253969601762,
+    "n_pairs": 6,
+    "gap_measured_by": "capability_gap_decision",
+    "resampling_unit": "task",
+    "n_tasks": 48,
+    "ci95": [
+      -0.09905707411971713,
+      0.7050263872068867
+    ],
+    "excludes_zero": false,
+    "note": "compensation regressed on the capability gap across pairs; the 48-task unit is resampled and every pair recomputed"
+  },
+  "slope_without_mistral": {
+    "slope": 0.35754913621536344,
+    "n_pairs": 5,
+    "gap_measured_by": "capability_gap",
+    "resampling_unit": "task",
+    "n_tasks": 48,
+    "ci95": [
+      -0.07631055488708666,
+      0.7841226787761669
+    ],
+    "excludes_zero": false,
+    "note": "compensation regressed on the capability gap across pairs; the 48-task unit is resampled and every pair recomputed"
+  },
+  "ablation": {
+    "on-device": {
+      "deciding_advantage": {
+        "estimate": 0.13333333333333333,
+        "ci95": [
+          -0.004166666666666668,
+          0.27499999999999997
+        ]
+      },
+      "variants": {
+        "deciding-no-iteration": {
+          "advantage_over_routing": -0.02638888888888889,
+          "ci95": [
+            -0.09583333333333333,
+            0.041666666666666664
+          ],
+          "share_of_full_advantage": -0.19791666666666666
+        },
+        "deciding-no-multi-dispatch": {
+          "advantage_over_routing": 0.18888888888888888,
+          "ci95": [
+            0.05555555555555555,
+            0.3277777777777778
+          ],
+          "share_of_full_advantage": 1.4166666666666667
+        },
+        "deciding-no-ask": {
+          "advantage_over_routing": 0.16805555555555554,
+          "ci95": [
+            0.036111111111111115,
+            0.3
+          ],
+          "share_of_full_advantage": 1.2604166666666665
+        }
+      }
+    },
+    "cloud": {
+      "deciding_advantage": {
+        "estimate": 0.17916666666666667,
+        "ci95": [
+          0.05000000000000001,
+          0.30833333333333335
+        ]
+      },
+      "variants": {
+        "deciding-no-iteration": {
+          "advantage_over_routing": -0.03333333333333333,
+          "ci95": [
+            -0.10833333333333335,
+            0.0375
+          ],
+          "share_of_full_advantage": -0.18604651162790697
+        },
+        "deciding-no-multi-dispatch": {
+          "advantage_over_routing": 0.09166666666666666,
+          "ci95": [
+            -0.02777777777777778,
+            0.2111111111111111
+          ],
+          "share_of_full_advantage": 0.5116279069767441
+        },
+        "deciding-no-ask": {
+          "advantage_over_routing": 0.14027777777777775,
+          "ci95": [
+            0.020833333333333332,
+            0.26388888888888884
+          ],
+          "share_of_full_advantage": 0.7829457364341084
+        }
+      }
+    }
+  },
+  "routing_inversion": {
+    "sonnet": {
+      "acted": {
+        "n": 153,
+        "task_success": 0.47058823529411764
+      },
+      "did_not_act": {
+        "n": 87,
+        "task_success": 0.9885057471264368
+      },
+      "action_rate": 0.6375,
+      "reasoning_only": {
+        "acted": {
+          "n": 30,
+          "task_success": 0.23333333333333334
+        },
+        "did_not_act": {
+          "n": 10,
+          "task_success": 1.0
+        }
+      }
+    },
+    "haiku": {
+      "acted": {
+        "n": 78,
+        "task_success": 0.5384615384615384
+      },
+      "did_not_act": {
+        "n": 66,
+        "task_success": 0.8636363636363636
+      },
+      "action_rate": 0.5416666666666666,
+      "reasoning_only": {
+        "acted": {
+          "n": 18,
+          "task_success": 0.16666666666666666
+        },
+        "did_not_act": {
+          "n": 6,
+          "task_success": 1.0
+        }
+      }
+    }
+  },
+  "property_costs": {
+    "deciding-no-iteration": {
+      "on_device_minus_cloud": -0.05277777777777779,
+      "ci95": [
+        -0.2152777777777778,
+        0.11111111111111109
+      ],
+      "n_tasks": 48,
+      "excludes_zero": false
+    },
+    "deciding-no-multi-dispatch": {
+      "on_device_minus_cloud": -0.14305555555555557,
+      "ci95": [
+        -0.2611111111111111,
+        -0.022222222222222223
+      ],
+      "n_tasks": 48,
+      "excludes_zero": true
+    },
+    "deciding-no-ask": {
+      "on_device_minus_cloud": -0.07361111111111111,
+      "ci95": [
+        -0.22083333333333333,
+        0.08888888888888889
+      ],
+      "n_tasks": 48,
+      "excludes_zero": false
+    }
+  }
+}

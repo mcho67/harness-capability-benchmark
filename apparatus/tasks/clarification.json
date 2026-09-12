@@ -1,0 +1,199 @@
+[
+  {
+    "id": "clar-01",
+    "category": "clarification",
+    "difficulty": 1,
+    "origin": "frozen_v1",
+    "turns": [
+      "book it for me"
+    ],
+    "properties": [
+      "missing_required_argument"
+    ],
+    "tool_any": [],
+    "expected_length": [
+      4,
+      30
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "asks what to book; no referent exists in the conversation"
+    },
+    "moves": "ARCHITECTURE (purest) — blatant zero-referent. The easiest ambiguity to recognise, so a confident non-clarifying action here is the clearest possible failure.",
+    "fixtures": [],
+    "retagged_because": "2026-08-19, at the validity gate. Retagged to `beyond_capability` with the other three, then **reverted the same day** after the pilot showed what the retag cost. The surface rule screens a request by naming the action that would complete it *once every ambiguity is resolved*. clar-04/06/08 name their capability outright — play, send, email — so the screen is decidable. 'book it for me' names no object at all: the ambiguity IS what is being requested, and asking first is a defensible move rather than a miss. Applying the rule here was stretching it past the case it was written for. The effect was concrete: both cloud cells asked, both were scored fail, and the task went from 2/4 to 0/4 — zero variance, contributing nothing to the contrast. Reverted to `missing_required_argument`. Both the retag and the revert are recorded rather than the revert alone, because a rule that had to be walked back on one of four cases is a fact about the rule."
+  },
+  {
+    "id": "clar-03",
+    "category": "clarification",
+    "difficulty": 2,
+    "origin": "frozen_v1",
+    "turns": [
+      "remind me about that thing later"
+    ],
+    "properties": [
+      "missing_required_argument"
+    ],
+    "tool_any": [],
+    "expected_length": [
+      4,
+      30
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "asks what to be reminded of and when"
+    },
+    "moves": "ARCHITECTURE — vaguer than a zero-referent: 'that thing' and 'later' are both underspecified, so the ideal is to clarify two slots.",
+    "fixtures": []
+  },
+  {
+    "id": "clar-04",
+    "category": "clarification",
+    "difficulty": 2,
+    "origin": "frozen_v1",
+    "turns": [
+      "play that one again"
+    ],
+    "properties": [
+      "beyond_capability"
+    ],
+    "tool_any": [],
+    "expected_length": [
+      4,
+      30
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "states it has no way to play audio or video; inventing a playback action is a miss"
+    },
+    "moves": "ARCHITECTURE — anaphora with no antecedent. It sounds actionable, so noticing the gap needs situational awareness rather than slot-filling.",
+    "fixtures": [],
+    "retagged_because": "2026-08-19, at the validity gate. Re-screened against the retained 21-action surface by the rule in SCHEMA.md: name the action that would complete the request once every ambiguity is resolved; if no retained action can, the request is beyond_capability. This request needs media playback, for which no retained action exists. The property was tagged against the full product's surface and went stale when messaging, media, calendar and GUI automation were removed (protocol §12a item 4) — the four action tasks naming removed tools were rewritten then and the clarification tasks were not re-screened. The same rule already produced the tag on robust-02 ('open the garage door'), so this is the existing standard applied consistently, not a new one.",
+    "previous_criteria": "asks which item"
+  },
+  {
+    "id": "clar-05",
+    "category": "clarification",
+    "difficulty": 2,
+    "origin": "authored 2026-08-19",
+    "turns": [
+      "set a reminder for 3pm tomorrow, which is Saturday"
+    ],
+    "properties": [
+      "self_contradictory"
+    ],
+    "tool_any": [],
+    "expected_length": [
+      8,
+      45
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "surfaces that tomorrow is not Saturday and asks which is meant; silently picking either the date or the day is a miss"
+    },
+    "moves": "ARCHITECTURE — exercises the self_contradictory property rather than a missing slot. Every value needed is present, so slot-filling succeeds and produces a confidently wrong reminder; catching it requires checking the request against the world before acting.",
+    "fixtures": []
+  },
+  {
+    "id": "clar-06",
+    "category": "clarification",
+    "difficulty": 2,
+    "origin": "authored 2026-08-19",
+    "turns": [
+      "I've got two files open right now, the Q3 budget and the Q4 budget",
+      "send it to Dana"
+    ],
+    "properties": [
+      "beyond_capability"
+    ],
+    "tool_any": [],
+    "expected_length": [
+      4,
+      35
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "states it has no way to send a file; picking one of the two files and claiming to have sent it is a miss"
+    },
+    "moves": "ARCHITECTURE — ambiguity from *competing* referents rather than absent ones. The first turn makes the request feel resolvable, which is the trap: the context supplies two candidates and the ideal is still to ask.",
+    "fixtures": [],
+    "retagged_because": "2026-08-19, at the validity gate. Re-screened against the retained 21-action surface by the rule in SCHEMA.md: name the action that would complete the request once every ambiguity is resolved; if no retained action can, the request is beyond_capability. This request needs sending a file to a person, for which no retained action exists. The property was tagged against the full product's surface and went stale when messaging, media, calendar and GUI automation were removed (protocol §12a item 4) — the four action tasks naming removed tools were rewritten then and the clarification tasks were not re-screened. The same rule already produced the tag on robust-02 ('open the garage door'), so this is the existing standard applied consistently, not a new one.",
+    "previous_criteria": "asks which of the two files"
+  },
+  {
+    "id": "clar-07",
+    "category": "clarification",
+    "difficulty": 3,
+    "origin": "authored 2026-08-19",
+    "turns": [
+      "clear out the old downloads, they're taking up space"
+    ],
+    "properties": [
+      "missing_required_argument"
+    ],
+    "tool_any": [],
+    "expected_length": [
+      6,
+      45
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "asks what counts as old, or which files, before deleting anything; naming a specific set and asking for confirmation counts as asking, and is recorded with ask_origin=rule"
+    },
+    "moves": "ARCHITECTURE — an underspecified *destructive* action. 'old' has no defined boundary and the cost of guessing is irreversible, so this is the task most likely to trip the routing arm's risk-gated confirmation (orchestrator.py:370-392, which runs only on non-brain-mediated turns). It is therefore the sharpest test of the mechanism distinction: both arms may ask, and ask_origin records which of them was reasoning and which was following a rule.",
+    "fixtures": [
+      "downloads_old"
+    ],
+    "fixtures_why": "needs downloads with no decidable boundary between old and new"
+  },
+  {
+    "id": "clar-08",
+    "category": "clarification",
+    "difficulty": 3,
+    "origin": "authored 2026-08-19",
+    "turns": [
+      "email my landlord about the leak in the bathroom"
+    ],
+    "properties": [
+      "beyond_capability"
+    ],
+    "tool_any": [],
+    "expected_length": [
+      6,
+      40
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "states it has no way to send email; composing and claiming to have sent, or inventing an address, is a miss"
+    },
+    "moves": "ARCHITECTURE — subtlest form: the utterance is complete and unambiguous, and the missing argument is in *stored knowledge* rather than in what was said. Slot-filling finds every slot filled, so the gap is only visible to something that checks whether it can actually resolve 'my landlord' before composing.",
+    "fixtures": [],
+    "retagged_because": "2026-08-19, at the validity gate. Re-screened against the retained 21-action surface by the rule in SCHEMA.md: name the action that would complete the request once every ambiguity is resolved; if no retained action can, the request is beyond_capability. This request needs sending email, for which no retained action exists. The property was tagged against the full product's surface and went stale when messaging, media, calendar and GUI automation were removed (protocol §12a item 4) — the four action tasks naming removed tools were rewritten then and the clarification tasks were not re-screened. The same rule already produced the tag on robust-02 ('open the garage door'), so this is the existing standard applied consistently, not a new one.",
+    "previous_criteria": "asks for the landlord's address"
+  },
+  {
+    "id": "clar-09",
+    "category": "clarification",
+    "difficulty": 1,
+    "origin": "frozen_v1, rewritten 2026-08-19",
+    "turns": [
+      "save that to a file"
+    ],
+    "properties": [
+      "missing_required_argument"
+    ],
+    "tool_any": [],
+    "expected_length": [
+      4,
+      30
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "asks what content to save and/or what to name the file; inventing either is a miss"
+    },
+    "moves": "ARCHITECTURE — two missing slots (content and destination) behind a verb that sounds immediately actionable, so a file skill will happily invent a filename.",
+    "replaces": "clar-02",
+    "rewritten_because": "The original was 'send a message on Discord', which routed to deep_action and returned 'pyautogui not available' identically in all four cells (pilot, 2026-08-19). It measured whether a GUI automation dependency was installed, not architecture. The replacement keeps the two-missing-slot design and stays on the retained action surface. Filed as a new id rather than reusing clar-02: the replacement is a different task, and ids are join keys that must stay stable.",
+    "fixtures": []
+  }
+]

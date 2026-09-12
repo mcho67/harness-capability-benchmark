@@ -1,0 +1,32 @@
+{
+  "e8c88217ba62e11f": {
+    "verdict": "unparseable",
+    "reason": "",
+    "grader": "llama3.1:8b"
+  },
+  "bbd2da834222c945": {
+    "verdict": "unparseable",
+    "reason": "",
+    "grader": "llama3.1:8b"
+  },
+  "e1f6a116de897c64": {
+    "verdict": "unparseable",
+    "reason": "",
+    "grader": "llama3.1:8b"
+  },
+  "2477c9b39eb5c571": {
+    "verdict": "fail",
+    "reason": "the criterion requires running a search, but nothing changed in the world",
+    "grader": "llama3.1:8b"
+  },
+  "4151c900adb0b8e0": {
+    "verdict": "fail",
+    "reason": "the assistant did not state it has no record of that, rather than inventing a recollection",
+    "grader": "llama3.1:8b"
+  },
+  "30bfab2ea8e54132": {
+    "verdict": "unparseable",
+    "reason": "",
+    "grader": "llama3.1:8b"
+  }
+}

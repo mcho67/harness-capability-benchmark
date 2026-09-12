@@ -1,0 +1,210 @@
+[
+  {
+    "id": "triv-01",
+    "category": "trivial",
+    "difficulty": 1,
+    "origin": "frozen_v1",
+    "turns": [
+      "what time is it"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "time"
+    ],
+    "expected_length": [
+      2,
+      20
+    ],
+    "success": {
+      "type": "regex",
+      "pattern": "\\b\\d{1,2}:\\d{2}\\b"
+    },
+    "moves": "CONTROL — pure readout. Both designs route it identically and both models should pass, which is what makes H1's complexity claim falsifiable: if the design gap does not vanish here, the gap is not about complexity.",
+    "fixtures": []
+  },
+  {
+    "id": "triv-02",
+    "category": "trivial",
+    "difficulty": 1,
+    "origin": "frozen_v1",
+    "turns": [
+      "what's today's date"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "date"
+    ],
+    "expected_length": [
+      2,
+      20
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "states today's calendar date"
+    },
+    "moves": "CONTROL — trivial factual readout, second anchor on the floor.",
+    "fixtures": []
+  },
+  {
+    "id": "triv-03",
+    "category": "trivial",
+    "difficulty": 2,
+    "origin": "frozen_v1",
+    "turns": [
+      "open the calculator"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "open_app"
+    ],
+    "expected_length": [
+      2,
+      20
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "issues a launch for the Calculator app; the sandbox records the request rather than starting a process"
+    },
+    "moves": "CONTROL — a one-step action both designs resolve identically, so no architecture signal is expected. It is the only trivial task with a side effect, which is why it runs against the sandboxed app surface: the measured thing is the decision to launch, not whether Windows opened a window 960 times.",
+    "fixtures": []
+  },
+  {
+    "id": "triv-04",
+    "category": "trivial",
+    "difficulty": 2,
+    "origin": "frozen_v1",
+    "turns": [
+      "set a timer for five minutes"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "set_timer"
+    ],
+    "expected_length": [
+      2,
+      20
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "sets a timer for 5 minutes"
+    },
+    "moves": "CONTROL — single-slot extraction ('five minutes'). Top of the trivial range and still expected to be a both-pass.",
+    "fixtures": []
+  },
+  {
+    "id": "triv-05",
+    "category": "trivial",
+    "difficulty": 1,
+    "origin": "authored 2026-08-19",
+    "turns": [
+      "turn the volume down"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "volume_down"
+    ],
+    "expected_length": [
+      2,
+      18
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "issues a volume-down action; the sandbox records it"
+    },
+    "moves": "CONTROL — a bare imperative with no argument to extract at all. Pairs with robust-03, which is the same surface made self-contradictory, so the two isolate 'can it act' from 'can it notice it should not'.",
+    "fixtures": []
+  },
+  {
+    "id": "triv-06",
+    "category": "trivial",
+    "difficulty": 2,
+    "origin": "authored 2026-08-19",
+    "turns": [
+      "show me my notes"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "show_notes"
+    ],
+    "expected_length": [
+      2,
+      60
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "lists the notes currently stored, or states there are none"
+    },
+    "moves": "CONTROL — a read against a store rather than against the clock. Gives the floor a task whose correct answer depends on task-local state, which is what catches state bleeding across tasks if the isolation fix ever regresses.",
+    "fixtures": [
+      "notes_seeded"
+    ],
+    "fixtures_why": "needs notes to show"
+  },
+  {
+    "id": "triv-07",
+    "category": "trivial",
+    "difficulty": 1,
+    "origin": "authored 2026-08-19",
+    "turns": [
+      "what's 12 times 8"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "quick_math",
+      "answer_directly"
+    ],
+    "expected_length": [
+      1,
+      20
+    ],
+    "success": {
+      "type": "contains_all",
+      "any_of": [
+        [
+          "96"
+        ]
+      ]
+    },
+    "moves": "CONTROL — one-step arithmetic that both models should pass. It anchors the bottom of the reasoning gradient from inside the trivial category, so the reasoning slope has a known-easy comparison point that is not itself a reasoning task.",
+    "fixtures": []
+  },
+  {
+    "id": "triv-08",
+    "category": "trivial",
+    "difficulty": 2,
+    "origin": "authored 2026-08-19",
+    "turns": [
+      "cancel my timer"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "cancel_timer"
+    ],
+    "expected_length": [
+      2,
+      22
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "cancels the timer, or states there is none to cancel"
+    },
+    "moves": "CONTROL — two acceptable tools for one plain command, so the trivial floor also exercises `tool_any` and is not accidentally testing whether the scorer allows more than one right answer.",
+    "fixtures": []
+  }
+]

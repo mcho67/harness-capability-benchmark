@@ -1,0 +1,449 @@
+{
+  "source_sheet": "\runs/second_rater_returned_coded.csv",
+  "tasks_rated": 48,
+  "blind": "rater saw task statements and the derivation rules only; no transcripts, scores, cells or derived ideals",
+  "timing": "performed AFTER the run (protocol.md §12b item 1); blind to results, but not able to change the task set",
+  "per_component": {
+    "asked": {
+      "n_rated": 48,
+      "n_agree": 38,
+      "raw_agreement": 0.7917,
+      "cohens_kappa": 0.25,
+      "derived_positive_rate": 0.1667
+    },
+    "declined": {
+      "n_rated": 48,
+      "n_agree": 41,
+      "raw_agreement": 0.8542,
+      "cohens_kappa": 0.503,
+      "derived_positive_rate": 0.1458
+    },
+    "backgrounded": {
+      "n_rated": 48,
+      "n_agree": 42,
+      "raw_agreement": 0.875,
+      "cohens_kappa": 0.2,
+      "derived_positive_rate": 0.0417
+    },
+    "decomposed": {
+      "n_rated": 48,
+      "n_agree": 38,
+      "raw_agreement": 0.7917,
+      "cohens_kappa": 0.346,
+      "derived_positive_rate": 0.1042
+    }
+  },
+  "action_choice": {
+    "n_rated": 43,
+    "n_agree": 24,
+    "raw_agreement": 0.5581,
+    "note": "agreement means the rater named an action the ideal's any-of set accepts, not an identical string"
+  },
+  "disagreements": [
+    {
+      "task_id": "triv-08",
+      "component": "asked",
+      "derived": false,
+      "rater": true,
+      "notes": "If there are multiple timers, ask which one. If there’s none, do nothing"
+    },
+    {
+      "task_id": "reason-01",
+      "component": "asked",
+      "derived": false,
+      "rater": true,
+      "notes": "Ask it it’s AM or PM"
+    },
+    {
+      "task_id": "clar-01",
+      "component": "asked",
+      "derived": true,
+      "rater": false,
+      "notes": "Vague. Book what?"
+    },
+    {
+      "task_id": "clar-05",
+      "component": "asked",
+      "derived": true,
+      "rater": false,
+      "notes": ""
+    },
+    {
+      "task_id": "clar-07",
+      "component": "asked",
+      "derived": true,
+      "rater": false,
+      "notes": ""
+    },
+    {
+      "task_id": "ground-07",
+      "component": "asked",
+      "derived": false,
+      "rater": true,
+      "notes": ""
+    },
+    {
+      "task_id": "robust-03",
+      "component": "asked",
+      "derived": true,
+      "rater": false,
+      "notes": ""
+    },
+    {
+      "task_id": "robust-06",
+      "component": "asked",
+      "derived": false,
+      "rater": true,
+      "notes": ""
+    },
+    {
+      "task_id": "robust-07",
+      "component": "asked",
+      "derived": false,
+      "rater": true,
+      "notes": ""
+    },
+    {
+      "task_id": "robust-08",
+      "component": "asked",
+      "derived": true,
+      "rater": false,
+      "notes": ""
+    },
+    {
+      "task_id": "act-11",
+      "component": "declined",
+      "derived": false,
+      "rater": true,
+      "notes": "No delete file operation"
+    },
+    {
+      "task_id": "clar-01",
+      "component": "declined",
+      "derived": false,
+      "rater": true,
+      "notes": "Vague. Book what?"
+    },
+    {
+      "task_id": "ground-05",
+      "component": "declined",
+      "derived": false,
+      "rater": true,
+      "notes": ""
+    },
+    {
+      "task_id": "robust-03",
+      "component": "declined",
+      "derived": false,
+      "rater": true,
+      "notes": ""
+    },
+    {
+      "task_id": "robust-05",
+      "component": "declined",
+      "derived": true,
+      "rater": false,
+      "notes": ""
+    },
+    {
+      "task_id": "robust-07",
+      "component": "declined",
+      "derived": true,
+      "rater": false,
+      "notes": ""
+    },
+    {
+      "task_id": "robust-08",
+      "component": "declined",
+      "derived": false,
+      "rater": true,
+      "notes": ""
+    },
+    {
+      "task_id": "act-01",
+      "component": "backgrounded",
+      "derived": false,
+      "rater": true,
+      "notes": ""
+    },
+    {
+      "task_id": "act-13",
+      "component": "backgrounded",
+      "derived": false,
+      "rater": true,
+      "notes": ""
+    },
+    {
+      "task_id": "act-15",
+      "component": "backgrounded",
+      "derived": true,
+      "rater": false,
+      "notes": ""
+    },
+    {
+      "task_id": "clar-05",
+      "component": "backgrounded",
+      "derived": false,
+      "rater": true,
+      "notes": ""
+    },
+    {
+      "task_id": "clar-07",
+      "component": "backgrounded",
+      "derived": false,
+      "rater": true,
+      "notes": ""
+    },
+    {
+      "task_id": "robust-07",
+      "component": "backgrounded",
+      "derived": false,
+      "rater": true,
+      "notes": ""
+    },
+    {
+      "task_id": "triv-08",
+      "component": "decomposed",
+      "derived": false,
+      "rater": true,
+      "notes": "If there are multiple timers, ask which one. If there’s none, do nothing"
+    },
+    {
+      "task_id": "reason-04",
+      "component": "decomposed",
+      "derived": false,
+      "rater": true,
+      "notes": "Break down the math"
+    },
+    {
+      "task_id": "reason-07",
+      "component": "decomposed",
+      "derived": false,
+      "rater": true,
+      "notes": "Break down the math"
+    },
+    {
+      "task_id": "reason-08",
+      "component": "decomposed",
+      "derived": true,
+      "rater": false,
+      "notes": ""
+    },
+    {
+      "task_id": "act-01",
+      "component": "decomposed",
+      "derived": false,
+      "rater": true,
+      "notes": ""
+    },
+    {
+      "task_id": "clar-05",
+      "component": "decomposed",
+      "derived": false,
+      "rater": true,
+      "notes": ""
+    },
+    {
+      "task_id": "clar-07",
+      "component": "decomposed",
+      "derived": false,
+      "rater": true,
+      "notes": ""
+    },
+    {
+      "task_id": "ground-01",
+      "component": "decomposed",
+      "derived": false,
+      "rater": true,
+      "notes": ""
+    },
+    {
+      "task_id": "ground-02",
+      "component": "decomposed",
+      "derived": false,
+      "rater": true,
+      "notes": ""
+    },
+    {
+      "task_id": "ground-08",
+      "component": "decomposed",
+      "derived": false,
+      "rater": true,
+      "notes": ""
+    },
+    {
+      "task_id": "triv-08",
+      "component": "action",
+      "derived": [
+        "cancel_timer"
+      ],
+      "rater": "show_timers, cancel_timer",
+      "notes": "If there are multiple timers, ask which one. If there’s none, do nothing"
+    },
+    {
+      "task_id": "act-01",
+      "component": "action",
+      "derived": [
+        "search_files"
+      ],
+      "rater": "list_files, search_files",
+      "notes": ""
+    },
+    {
+      "task_id": "act-12",
+      "component": "action",
+      "derived": [
+        "search_files"
+      ],
+      "rater": "list_files, search_files",
+      "notes": ""
+    },
+    {
+      "task_id": "act-13",
+      "component": "action",
+      "derived": [
+        "list_files",
+        "search_files"
+      ],
+      "rater": "list_files, file_stat",
+      "notes": ""
+    },
+    {
+      "task_id": "act-14",
+      "component": "action",
+      "derived": [
+        "quick_math",
+        "show_notes"
+      ],
+      "rater": "list_files, show_notes, quick_math",
+      "notes": ""
+    },
+    {
+      "task_id": "act-15",
+      "component": "action",
+      "derived": [
+        "add_note",
+        "show_notes"
+      ],
+      "rater": "show_notes, search_file, add_note",
+      "notes": ""
+    },
+    {
+      "task_id": "clar-05",
+      "component": "action",
+      "derived": [
+        "none"
+      ],
+      "rater": "remember, set_timer, recall",
+      "notes": ""
+    },
+    {
+      "task_id": "clar-06",
+      "component": "action",
+      "derived": [
+        "none"
+      ],
+      "rater": "remember",
+      "notes": ""
+    },
+    {
+      "task_id": "clar-07",
+      "component": "action",
+      "derived": [
+        "none"
+      ],
+      "rater": "list_files, delete_file",
+      "notes": ""
+    },
+    {
+      "task_id": "clar-09",
+      "component": "action",
+      "derived": [
+        "none"
+      ],
+      "rater": "write_file",
+      "notes": ""
+    },
+    {
+      "task_id": "ground-01",
+      "component": "action",
+      "derived": [
+        "answer_directly"
+      ],
+      "rater": "remember, recall",
+      "notes": ""
+    },
+    {
+      "task_id": "ground-02",
+      "component": "action",
+      "derived": [
+        "answer_directly"
+      ],
+      "rater": "remember, recall",
+      "notes": ""
+    },
+    {
+      "task_id": "ground-05",
+      "component": "action",
+      "derived": [
+        "answer_directly"
+      ],
+      "rater": "remember, remember, remember",
+      "notes": ""
+    },
+    {
+      "task_id": "ground-06",
+      "component": "action",
+      "derived": [
+        "answer_directly"
+      ],
+      "rater": "remember, remember , recall",
+      "notes": ""
+    },
+    {
+      "task_id": "ground-07",
+      "component": "action",
+      "derived": [
+        "answer_directly"
+      ],
+      "rater": "remember, none",
+      "notes": ""
+    },
+    {
+      "task_id": "ground-08",
+      "component": "action",
+      "derived": [
+        "answer_directly"
+      ],
+      "rater": "remember, quick_math, set_timer, quick_math, recall",
+      "notes": ""
+    },
+    {
+      "task_id": "robust-05",
+      "component": "action",
+      "derived": [
+        "none"
+      ],
+      "rater": "recall",
+      "notes": ""
+    },
+    {
+      "task_id": "robust-07",
+      "component": "action",
+      "derived": [
+        "none"
+      ],
+      "rater": "list_files",
+      "notes": ""
+    },
+    {
+      "task_id": "robust-08",
+      "component": "action",
+      "derived": [
+        "none"
+      ],
+      "rater": "remember",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+[
+  {
+    "id": "ground-01",
+    "category": "grounding",
+    "difficulty": 1,
+    "origin": "frozen_v1",
+    "turns": [
+      "my sister's name is Mia",
+      "what did I just say her name was?"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "answer_directly"
+    ],
+    "expected_length": [
+      1,
+      25
+    ],
+    "success": {
+      "type": "contains_all",
+      "any_of": [
+        [
+          "Mia"
+        ]
+      ]
+    },
+    "moves": "GROUNDING (control) — one-turn-back recall both models should pass. Anchors the bottom of the grounding range.",
+    "fixtures": []
+  },
+  {
+    "id": "ground-02",
+    "category": "grounding",
+    "difficulty": 2,
+    "origin": "frozen_v1",
+    "turns": [
+      "My dog is named Rex and my cat is named Luna.",
+      "what did I say the cat's name was?"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "answer_directly"
+    ],
+    "expected_length": [
+      1,
+      25
+    ],
+    "success": {
+      "type": "contains_all",
+      "any_of": [
+        [
+          "Luna"
+        ]
+      ]
+    },
+    "moves": "GROUNDING — selective recall from a two-entity statement; the failure mode is returning the other one.",
+    "fixtures": []
+  },
+  {
+    "id": "ground-03",
+    "category": "grounding",
+    "difficulty": 3,
+    "origin": "frozen_v1",
+    "turns": [
+      "My meeting moved from 2pm to 4pm.",
+      "how much later is it now?"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "answer_directly",
+      "quick_math"
+    ],
+    "expected_length": [
+      1,
+      30
+    ],
+    "success": {
+      "type": "contains_all",
+      "any_of": [
+        [
+          "2 hours"
+        ],
+        [
+          "two hours"
+        ]
+      ]
+    },
+    "moves": "GROUNDING + reasoning — carry both times *and* compute the delta, so a system that recalls without reasoning fails.",
+    "fixtures": []
+  },
+  {
+    "id": "ground-04",
+    "category": "grounding",
+    "difficulty": 4,
+    "origin": "frozen_v1",
+    "turns": [
+      "I'm planning a trip to Tokyo in April",
+      "what season will it be there when I go?"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "answer_directly"
+    ],
+    "expected_length": [
+      1,
+      35
+    ],
+    "success": {
+      "type": "contains_all",
+      "any_of": [
+        [
+          "spring"
+        ]
+      ]
+    },
+    "moves": "DEPLOYMENT via grounding — carry two facts and apply hemisphere knowledge to them. Two ways to fail: drop the context, or hold it and reason wrongly.",
+    "fixtures": []
+  },
+  {
+    "id": "ground-05",
+    "category": "grounding",
+    "difficulty": 5,
+    "origin": "frozen_v1",
+    "turns": [
+      "I'm vegetarian.",
+      "I'm also allergic to nuts.",
+      "And I love spicy food.",
+      "Suggest a dinner for me tonight."
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "answer_directly"
+    ],
+    "expected_length": [
+      10,
+      90
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "suggests a dinner that is vegetarian AND nut-free AND spicy — all three constraints respected"
+    },
+    "moves": "DEPLOYMENT via sustained grounding — three constraints across four turns, where dropping any one is a visible failure.",
+    "fixtures": []
+  },
+  {
+    "id": "ground-06",
+    "category": "grounding",
+    "difficulty": 3,
+    "origin": "authored 2026-08-19",
+    "turns": [
+      "My flight is at 6pm.",
+      "Actually it moved to 8pm.",
+      "What time is my flight?"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "answer_directly"
+    ],
+    "expected_length": [
+      1,
+      25
+    ],
+    "success": {
+      "type": "contains_all",
+      "any_of": [
+        [
+          "8"
+        ]
+      ]
+    },
+    "moves": "GROUNDING (revision) — the inherited five all *accumulate* context; none tests *overwriting* it. A store that appends rather than updates answers 6pm confidently, which is the failure this task exists to catch.",
+    "fixtures": []
+  },
+  {
+    "id": "ground-07",
+    "category": "grounding",
+    "difficulty": 4,
+    "origin": "authored 2026-08-19",
+    "turns": [
+      "I don't drink coffee.",
+      "What should I have in the morning to wake up?"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "answer_directly"
+    ],
+    "expected_length": [
+      5,
+      70
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "suggests a morning drink or routine that is not coffee; recommending coffee is a miss even if hedged"
+    },
+    "moves": "DEPLOYMENT via grounding — a *negative* constraint, which is harder to carry than a positive one because the strongest association for the question is exactly the thing that was ruled out.",
+    "fixtures": []
+  },
+  {
+    "id": "ground-08",
+    "category": "grounding",
+    "difficulty": 5,
+    "origin": "authored 2026-08-19",
+    "turns": [
+      "My landlord's name is Priya.",
+      "What's 15% of 80?",
+      "Set a timer for ten minutes.",
+      "How many days are in February this year?",
+      "Who did I say my landlord was?"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "answer_directly"
+    ],
+    "expected_length": [
+      1,
+      25
+    ],
+    "success": {
+      "type": "contains_all",
+      "any_of": [
+        [
+          "Priya"
+        ]
+      ]
+    },
+    "moves": "DEPLOYMENT via grounding under interference — the fact is stated once, then three unrelated turns intervene before it is needed. ground-05 tests holding several facts at once; this tests holding one fact across distance, which is the attention limit a smaller model is most likely to hit.",
+    "fixtures": []
+  }
+]

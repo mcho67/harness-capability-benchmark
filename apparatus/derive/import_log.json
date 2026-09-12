@@ -1,0 +1,1312 @@
+{
+  "generated": "2026-08-19T10:10:07",
+  "rule": "CHARTER.md \u00a73 \u2014 a module belongs in the apparatus only if it is reachable on the path from finalized text input to final response. Applied by running, not by reading.",
+  "snapshot": "frozen_v1 @ 5cbd13e (tag paper-frozen-v1)",
+  "python": "3.13.11",
+  "cells": {
+    "C1": {
+      "architecture": "brain",
+      "deployment": "cloud",
+      "model": "claude-sonnet-4-6",
+      "tasks": 27,
+      "rows_written": 27,
+      "elapsed_s": 53.7,
+      "error": "",
+      "traced_at": "2026-08-19T10:09:33"
+    },
+    "C2": {
+      "architecture": "brain",
+      "deployment": "local",
+      "model": "llama3.1:8b",
+      "tasks": 27,
+      "rows_written": 27,
+      "elapsed_s": 115.3,
+      "error": "",
+      "traced_at": "2026-08-19T10:03:42"
+    },
+    "C3": {
+      "architecture": "pipeline",
+      "deployment": "cloud",
+      "model": "claude-sonnet-4-6",
+      "tasks": 27,
+      "rows_written": 27,
+      "elapsed_s": 33.7,
+      "error": "",
+      "traced_at": "2026-08-19T10:10:07"
+    },
+    "C4": {
+      "architecture": "pipeline",
+      "deployment": "local",
+      "model": "llama3.1:8b",
+      "tasks": 27,
+      "rows_written": 27,
+      "elapsed_s": 140.5,
+      "error": "",
+      "traced_at": "2026-08-19T10:01:34"
+    }
+  },
+  "complete": true,
+  "incomplete_cells": [],
+  "module_count": 145,
+  "modules": {
+    "app": {
+      "path": "app/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "app.key_vault": {
+      "path": "app/key_vault.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "app.privacy_tier": {
+      "path": "app/privacy_tier.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "app.settings_store": {
+      "path": "app/settings_store.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "awareness": {
+      "path": "awareness.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "cognitive": {
+      "path": "cognitive/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "cognitive.action_worker": {
+      "path": "cognitive/action_worker.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "cognitive.brain": {
+      "path": "cognitive/brain.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "cognitive.brain_tier_selector": {
+      "path": "cognitive/brain_tier_selector.py",
+      "cells": [
+        "C1"
+      ]
+    },
+    "cognitive.brain_tools": {
+      "path": "cognitive/brain_tools.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "cognitive.brain_tools_ask": {
+      "path": "cognitive/brain_tools_ask.py",
+      "cells": [
+        "C1"
+      ]
+    },
+    "cognitive.brain_tools_cards": {
+      "path": "cognitive/brain_tools_cards.py",
+      "cells": [
+        "C1"
+      ]
+    },
+    "cognitive.brain_tools_deep": {
+      "path": "cognitive/brain_tools_deep.py",
+      "cells": [
+        "C1",
+        "C2"
+      ]
+    },
+    "cognitive.brain_tools_screen": {
+      "path": "cognitive/brain_tools_screen.py",
+      "cells": [
+        "C1"
+      ]
+    },
+    "cognitive.brain_tools_system": {
+      "path": "cognitive/brain_tools_system.py",
+      "cells": [
+        "C1"
+      ]
+    },
+    "cognitive.cognitive_layer": {
+      "path": "cognitive/cognitive_layer.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "cognitive.consent": {
+      "path": "cognitive/consent.py",
+      "cells": [
+        "C1"
+      ]
+    },
+    "cognitive.context_curator": {
+      "path": "cognitive/context_curator.py",
+      "cells": [
+        "C1"
+      ]
+    },
+    "cognitive.conversation_context": {
+      "path": "cognitive/conversation_context.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "cognitive.executive": {
+      "path": "cognitive/executive.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "cognitive.pending_question": {
+      "path": "cognitive/pending_question.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "cognitive.response_budget": {
+      "path": "cognitive/response_budget.py",
+      "cells": [
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "cognitive.self_model": {
+      "path": "cognitive/self_model.py",
+      "cells": [
+        "C1"
+      ]
+    },
+    "cognitive.speculative_dispatch": {
+      "path": "cognitive/speculative_dispatch.py",
+      "cells": [
+        "C1"
+      ]
+    },
+    "cognitive.stance_ledger": {
+      "path": "cognitive/stance_ledger.py",
+      "cells": [
+        "C1"
+      ]
+    },
+    "cognitive.task_planner": {
+      "path": "cognitive/task_planner.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "cognitive.thought_sentinel": {
+      "path": "cognitive/thought_sentinel.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "cognitive.thought_stream": {
+      "path": "cognitive/thought_stream.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "cognitive.thread_stack": {
+      "path": "cognitive/thread_stack.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "cognitive.turn_contract": {
+      "path": "cognitive/turn_contract.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "cognitive.working_memory": {
+      "path": "cognitive/working_memory.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "commit": {
+      "path": "commit/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "commit.policy": {
+      "path": "commit/policy.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "config": {
+      "path": "config.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "config_voice_timing": {
+      "path": "config_voice_timing.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "continuity": {
+      "path": "continuity.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "drivers": {
+      "path": "drivers/__init__.py",
+      "cells": [
+        "C1"
+      ]
+    },
+    "drivers.driver": {
+      "path": "drivers/driver.py",
+      "cells": [
+        "C1"
+      ]
+    },
+    "formatting": {
+      "path": "formatting/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "formatting.action_personality": {
+      "path": "formatting/action_personality.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "greetings": {
+      "path": "greetings.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "infrastructure": {
+      "path": "infrastructure/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "infrastructure.ai_engines": {
+      "path": "infrastructure/ai_engines/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "infrastructure.ai_engines.async_llm": {
+      "path": "infrastructure/ai_engines/async_llm.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "infrastructure.ai_engines.llm_service": {
+      "path": "infrastructure/ai_engines/llm_service.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "infrastructure.ai_engines.providers": {
+      "path": "infrastructure/ai_engines/providers/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "infrastructure.ai_engines.providers.anthropic": {
+      "path": "infrastructure/ai_engines/providers/anthropic.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3"
+      ]
+    },
+    "infrastructure.ai_engines.providers.base": {
+      "path": "infrastructure/ai_engines/providers/base.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "infrastructure.ai_engines.providers.factory": {
+      "path": "infrastructure/ai_engines/providers/factory.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "infrastructure.ai_engines.providers.ollama": {
+      "path": "infrastructure/ai_engines/providers/ollama.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "log": {
+      "path": "log.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "main": {
+      "path": "main.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "memory": {
+      "path": "memory/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "memory.memory_db": {
+      "path": "memory/memory_db.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "memory.passive_memory": {
+      "path": "memory/passive_memory.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "memory.semantic_index": {
+      "path": "memory/semantic_index.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "metrics": {
+      "path": "metrics/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "metrics.cost_meter": {
+      "path": "metrics/cost_meter.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "metrics.degradation": {
+      "path": "metrics/degradation.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "metrics.latency": {
+      "path": "metrics/latency.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "metrics.stability": {
+      "path": "metrics/stability.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "metrics.watchdog": {
+      "path": "metrics/watchdog.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "mood": {
+      "path": "mood/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "nlu": {
+      "path": "nlu/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "nlu.asr_context": {
+      "path": "nlu/asr_context.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "nlu.conversational_gate": {
+      "path": "nlu/conversational_gate.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "nlu.corroboration": {
+      "path": "nlu/corroboration.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "nlu.disambiguator": {
+      "path": "nlu/disambiguator.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "nlu.entity_extractor": {
+      "path": "nlu/entity_extractor.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "nlu.intent_classifier": {
+      "path": "nlu/intent_classifier.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "nlu.intent_registry": {
+      "path": "nlu/intent_registry.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "nlu.intent_scorer": {
+      "path": "nlu/intent_scorer.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "nlu.intent_telemetry": {
+      "path": "nlu/intent_telemetry.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "nlu.multi_intent": {
+      "path": "nlu/multi_intent.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "nlu.nlu_pipeline": {
+      "path": "nlu/nlu_pipeline.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "nlu.text_cleaning": {
+      "path": "nlu/text_cleaning.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "nlu.word_numbers": {
+      "path": "nlu/word_numbers.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "orchestrator": {
+      "path": "orchestrator/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "orchestrator.confirmation_manager": {
+      "path": "orchestrator/confirmation_manager.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "orchestrator.orchestrator": {
+      "path": "orchestrator/orchestrator.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "orchestrator.permissions": {
+      "path": "orchestrator/permissions.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "orchestrator.risk_evaluator": {
+      "path": "orchestrator/risk_evaluator.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "orchestrator.skill_ergonomics": {
+      "path": "orchestrator/skill_ergonomics.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "perf": {
+      "path": "perf.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "personality": {
+      "path": "personality/__init__.py",
+      "cells": [
+        "C1"
+      ]
+    },
+    "personality.progress_phrases": {
+      "path": "personality/progress_phrases.py",
+      "cells": [
+        "C1"
+      ]
+    },
+    "proactive": {
+      "path": "proactive/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "proactive.engine": {
+      "path": "proactive/engine.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "proactive.monitors": {
+      "path": "proactive/monitors.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "proactive.precompute": {
+      "path": "proactive/precompute.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "research": {
+      "path": "research/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "research.capture": {
+      "path": "research/capture.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "research.run_cell": {
+      "path": "research/run_cell.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "research.schema": {
+      "path": "research/schema.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "response_streaming": {
+      "path": "response_streaming.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "rewriter": {
+      "path": "rewriter.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "services": {
+      "path": "services/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "services.math_detect": {
+      "path": "services/math_detect.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "services.search_service": {
+      "path": "services/search_service.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills": {
+      "path": "skills/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action": {
+      "path": "skills/action/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.app_automation_skill": {
+      "path": "skills/action/app_automation_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.app_registry": {
+      "path": "skills/action/app_registry.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.app_volume_skill": {
+      "path": "skills/action/app_volume_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.calendar_skill": {
+      "path": "skills/action/calendar_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.clipboard_skill": {
+      "path": "skills/action/clipboard_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.computer_control_skill": {
+      "path": "skills/action/computer_control_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.deep_action_skill": {
+      "path": "skills/action/deep_action_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.document_skill": {
+      "path": "skills/action/document_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.download_skill": {
+      "path": "skills/action/download_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.email_skill": {
+      "path": "skills/action/email_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.file_skill": {
+      "path": "skills/action/file_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.math_skill": {
+      "path": "skills/action/math_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.media_skill": {
+      "path": "skills/action/media_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.memory_skill": {
+      "path": "skills/action/memory_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.navigator_skill": {
+      "path": "skills/action/navigator_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.notes_skill": {
+      "path": "skills/action/notes_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.research_skill": {
+      "path": "skills/action/research_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.screen_agent": {
+      "path": "skills/action/screen_agent.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.screen_skill": {
+      "path": "skills/action/screen_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.screen_utils": {
+      "path": "skills/action/screen_utils.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.smart_home_skill": {
+      "path": "skills/action/smart_home_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.system_commands_skill": {
+      "path": "skills/action/system_commands_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.system_monitor_skill": {
+      "path": "skills/action/system_monitor_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.timer_skill": {
+      "path": "skills/action/timer_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.weather_skill": {
+      "path": "skills/action/weather_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.web_search_skill": {
+      "path": "skills/action/web_search_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.action.window_skill": {
+      "path": "skills/action/window_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.adaptive": {
+      "path": "skills/adaptive.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.autodiscovery": {
+      "path": "skills/autodiscovery.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.base_skill": {
+      "path": "skills/base_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.skill_contract": {
+      "path": "skills/skill_contract.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.skill_meta": {
+      "path": "skills/skill_meta.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.social": {
+      "path": "skills/social/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.social.conversation_skill": {
+      "path": "skills/social/conversation_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "skills.social.social_reflex_skill": {
+      "path": "skills/social/social_reflex_skill.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "startup_check": {
+      "path": "startup_check.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "state": {
+      "path": "state/__init__.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "state.conversation_rewriter": {
+      "path": "state/conversation_rewriter.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "state.decision": {
+      "path": "state/decision.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "state.interaction_tracking": {
+      "path": "state/interaction_tracking.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "state.models": {
+      "path": "state/models.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "state.session_state": {
+      "path": "state/session_state.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "stream_timing": {
+      "path": "stream_timing.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    "turn_trace": {
+      "path": "turn_trace.py",
+      "cells": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    }
+  }
+}

@@ -1,0 +1,244 @@
+[
+  {
+    "id": "reason-01",
+    "category": "reasoning",
+    "difficulty": 1,
+    "origin": "frozen_v1",
+    "turns": [
+      "A train leaves at 3:50 and the trip takes 95 minutes. What time does it arrive?"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "answer_directly",
+      "quick_math"
+    ],
+    "expected_length": [
+      1,
+      40
+    ],
+    "success": {
+      "type": "contains_all",
+      "any_of": [
+        [
+          "5:25"
+        ]
+      ]
+    },
+    "moves": "DEPLOYMENT (outcome) — one-step time arithmetic, the easy end of the gradient where even the local model should mostly pass.",
+    "fixtures": []
+  },
+  {
+    "id": "reason-02",
+    "category": "reasoning",
+    "difficulty": 2,
+    "origin": "frozen_v1",
+    "turns": [
+      "Which is larger: three sevenths or five twelfths? Answer with the fraction."
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "answer_directly",
+      "quick_math"
+    ],
+    "expected_length": [
+      1,
+      40
+    ],
+    "success": {
+      "type": "contains_all",
+      "any_of": [
+        [
+          "three sevenths"
+        ],
+        [
+          "3/7"
+        ]
+      ]
+    },
+    "moves": "DEPLOYMENT — fraction comparison (0.4286 vs 0.4167), a margin narrow enough to start separating models.",
+    "fixtures": []
+  },
+  {
+    "id": "reason-03",
+    "category": "reasoning",
+    "difficulty": 3,
+    "origin": "frozen_v1",
+    "turns": [
+      "Order these from smallest to largest: a gallon, a pint, a liter."
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "answer_directly"
+    ],
+    "expected_length": [
+      3,
+      40
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "orders pint < liter < gallon"
+    },
+    "moves": "DEPLOYMENT — world knowledge of unit sizes rather than arithmetic, so the gradient is not purely a calculation gradient.",
+    "fixtures": []
+  },
+  {
+    "id": "reason-04",
+    "category": "reasoning",
+    "difficulty": 4,
+    "origin": "frozen_v1",
+    "turns": [
+      "I have $50. I spend 30% on food, then half of what's left on gas. How much do I have left?"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "answer_directly",
+      "quick_math"
+    ],
+    "expected_length": [
+      1,
+      60
+    ],
+    "success": {
+      "type": "contains_all",
+      "any_of": [
+        [
+          "17.50"
+        ],
+        [
+          "17.5"
+        ]
+      ]
+    },
+    "moves": "DEPLOYMENT — two chained percentages (50 → 35 → 17.5), where the second step depends on the first being right.",
+    "fixtures": []
+  },
+  {
+    "id": "reason-05",
+    "category": "reasoning",
+    "difficulty": 5,
+    "origin": "frozen_v1",
+    "turns": [
+      "A 240-page book: I read one third on Monday and 25% of the remainder on Tuesday. How many pages are left?"
+    ],
+    "properties": [
+      "well_specified",
+      "multi_step"
+    ],
+    "tool_any": [
+      "answer_directly",
+      "quick_math"
+    ],
+    "expected_length": [
+      1,
+      70
+    ],
+    "success": {
+      "type": "contains_all",
+      "any_of": [
+        [
+          "120"
+        ]
+      ]
+    },
+    "moves": "DEPLOYMENT + decompose — three dependent steps (240 → 160 → 120). The hard end, and the only inherited reasoning task whose ideal decision includes decomposing.",
+    "fixtures": []
+  },
+  {
+    "id": "reason-06",
+    "category": "reasoning",
+    "difficulty": 2,
+    "origin": "authored 2026-08-19",
+    "turns": [
+      "Every book on that shelf is either fiction or a biography. This one isn't fiction. What is it?"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "answer_directly"
+    ],
+    "expected_length": [
+      1,
+      35
+    ],
+    "success": {
+      "type": "contains_all",
+      "any_of": [
+        [
+          "biography"
+        ]
+      ]
+    },
+    "moves": "DEPLOYMENT — deduction with no arithmetic at all. Without it the reasoning category measures calculation and calls it reasoning, which would make the H1 difficulty slope a slope in arithmetic rather than in inference.",
+    "fixtures": []
+  },
+  {
+    "id": "reason-07",
+    "category": "reasoning",
+    "difficulty": 3,
+    "origin": "authored 2026-08-19",
+    "turns": [
+      "A recipe serves 4 and needs 300g of flour. How much flour for 10 people?"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "answer_directly",
+      "quick_math"
+    ],
+    "expected_length": [
+      1,
+      40
+    ],
+    "success": {
+      "type": "contains_all",
+      "any_of": [
+        [
+          "750"
+        ]
+      ]
+    },
+    "moves": "DEPLOYMENT — proportional scaling to a non-integer multiple (2.5×), which is where small models tend to round to a whole factor.",
+    "fixtures": []
+  },
+  {
+    "id": "reason-08",
+    "category": "reasoning",
+    "difficulty": 4,
+    "origin": "authored 2026-08-19",
+    "turns": [
+      "I have three 45-minute meetings back to back starting at 9:00, with a 10-minute break between each. When does the last one end?"
+    ],
+    "properties": [
+      "well_specified",
+      "multi_step"
+    ],
+    "tool_any": [
+      "answer_directly",
+      "quick_math"
+    ],
+    "expected_length": [
+      1,
+      60
+    ],
+    "success": {
+      "type": "contains_all",
+      "any_of": [
+        [
+          "11:35"
+        ]
+      ]
+    },
+    "moves": "DEPLOYMENT + decompose — chained time arithmetic where the trap is counting breaks (two, not three). Gives the category a second decomposable task so reason-05 is not a single point carrying the decompose signal alone.",
+    "fixtures": []
+  }
+]

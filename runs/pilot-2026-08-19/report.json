@@ -1,0 +1,319 @@
+{
+  "source": "runs/pilot-2026-08-19/scored.jsonl",
+  "n_runs": 192,
+  "n_tasks": 48,
+  "cells_present": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+  ],
+  "complete_2x2": true,
+  "primary_coding": "success_strict",
+  "cell_means": {
+    "C1": {
+      "n": 48,
+      "n_tasks": 48,
+      "mean": 0.8125
+    },
+    "C2": {
+      "n": 48,
+      "n_tasks": 48,
+      "mean": 0.5416666666666666
+    },
+    "C3": {
+      "n": 48,
+      "n_tasks": 48,
+      "mean": 0.6666666666666666
+    },
+    "C4": {
+      "n": 48,
+      "n_tasks": 48,
+      "mean": 0.3541666666666667
+    }
+  },
+  "unjudged_rows": 0,
+  "judge_error_rows": 0,
+  "degraded_rows": 0,
+  "decision_accuracy": {
+    "C1": 0.75,
+    "C2": 0.5,
+    "C3": 0.7083333333333334,
+    "C4": 0.4375
+  },
+  "ask_origin": {
+    "C1": {
+      "model": 14,
+      "none": 34,
+      "rule": 0
+    },
+    "C2": {
+      "model": 8,
+      "none": 39,
+      "rule": 1
+    },
+    "C3": {
+      "model": 10,
+      "none": 38,
+      "rule": 0
+    },
+    "C4": {
+      "model": 1,
+      "none": 47,
+      "rule": 0
+    }
+  },
+  "validity_gate": {
+    "band": [
+      0.15,
+      0.85
+    ],
+    "local_overall": 0.4479166666666667,
+    "local_overall_in_band": true,
+    "per_category": {
+      "action": {
+        "rate": 0.1875,
+        "n": 16,
+        "exempt": false,
+        "in_band": true
+      },
+      "clarification": {
+        "rate": 0.0625,
+        "n": 16,
+        "exempt": false,
+        "in_band": false
+      },
+      "grounding": {
+        "rate": 0.5625,
+        "n": 16,
+        "exempt": false,
+        "in_band": true
+      },
+      "reasoning": {
+        "rate": 0.5625,
+        "n": 16,
+        "exempt": false,
+        "in_band": true
+      },
+      "robustness": {
+        "rate": 0.4375,
+        "n": 16,
+        "exempt": false,
+        "in_band": true
+      },
+      "trivial": {
+        "rate": 0.875,
+        "n": 16,
+        "exempt": true,
+        "in_band": true
+      }
+    },
+    "categories_out_of_band": [
+      "clarification"
+    ],
+    "categories_exempt": [
+      "trivial"
+    ],
+    "criterion_met": false,
+    "proceed": true,
+    "exceptions_invoked": {
+      "clarification": "2026-08-19, after pilot M4 (192 runs, R=1). Local success 0.062 (1/16), below the 0.15 floor, and unchanged by re-screening four records against the retained action surface. The floor is not a task artifact: the local model asks correctly elsewhere in the same pilot (10 questions across robustness, grounding and trivial), and its failure mode here is specific and reproducible — it confabulates, claiming completed actions it has no tool for (\"You are now in your email client\", \"The music player is now open\") and emitting raw tool-call JSON as prose. Rewording tasks would not move a confabulation floor, and iterating until the gate passed would be the tuning the gate exists to prevent. WHAT THIS FORFEITS: no claim is made about architecture within the clarification category at local deployment, because both arms sit at the floor there and no gradient exists for architecture to interact with. The category is reported descriptively, with its n. It still contributes to the overall contrast — 6 of its 8 tasks discriminate between cells — but that discrimination is deployment, not architecture."
+    },
+    "undocumented_failures": [],
+    "n_local_runs": 96,
+    "n_local_tasks": 48
+  },
+  "compensation_point": 0.041666666666666574,
+  "compensation_lenient": 0.08333333333333331,
+  "bootstrap": {
+    "point": 0.041666666666666574,
+    "ci_low": -0.10416666666666669,
+    "ci_high": 0.18750000000000006,
+    "resamples": 5000,
+    "resamples_requested": 5000,
+    "n_tasks_resampled": 48,
+    "unit": "task (with all repetitions attached)"
+  },
+  "mixed_effects": {
+    "estimator": "GEE binomial, exchangeable, clustered on task",
+    "n": 192,
+    "n_tasks": 48,
+    "orientation": "(routing cloud-local) - (deciding cloud-local), matching the pre-registered contrast",
+    "interaction_logodds": -0.005361943141384641,
+    "interaction_se": 0.38888118829133533,
+    "interaction_p": 0.9889950680225911,
+    "interaction_test": "generalised score test (GEE)",
+    "arch_logodds": -0.7678279450920965,
+    "depl_logodds": 1.2992829841302607
+  },
+  "by_category": [
+    {
+      "category": "action",
+      "architecture": "deciding",
+      "deployment": "cloud",
+      "mean": 0.375,
+      "n": 8
+    },
+    {
+      "category": "action",
+      "architecture": "deciding",
+      "deployment": "local",
+      "mean": 0.25,
+      "n": 8
+    },
+    {
+      "category": "action",
+      "architecture": "routing",
+      "deployment": "cloud",
+      "mean": 0.25,
+      "n": 8
+    },
+    {
+      "category": "action",
+      "architecture": "routing",
+      "deployment": "local",
+      "mean": 0.125,
+      "n": 8
+    },
+    {
+      "category": "clarification",
+      "architecture": "deciding",
+      "deployment": "cloud",
+      "mean": 0.875,
+      "n": 8
+    },
+    {
+      "category": "clarification",
+      "architecture": "deciding",
+      "deployment": "local",
+      "mean": 0.125,
+      "n": 8
+    },
+    {
+      "category": "clarification",
+      "architecture": "routing",
+      "deployment": "cloud",
+      "mean": 0.75,
+      "n": 8
+    },
+    {
+      "category": "clarification",
+      "architecture": "routing",
+      "deployment": "local",
+      "mean": 0.0,
+      "n": 8
+    },
+    {
+      "category": "grounding",
+      "architecture": "deciding",
+      "deployment": "cloud",
+      "mean": 1.0,
+      "n": 8
+    },
+    {
+      "category": "grounding",
+      "architecture": "deciding",
+      "deployment": "local",
+      "mean": 0.875,
+      "n": 8
+    },
+    {
+      "category": "grounding",
+      "architecture": "routing",
+      "deployment": "cloud",
+      "mean": 0.75,
+      "n": 8
+    },
+    {
+      "category": "grounding",
+      "architecture": "routing",
+      "deployment": "local",
+      "mean": 0.25,
+      "n": 8
+    },
+    {
+      "category": "reasoning",
+      "architecture": "deciding",
+      "deployment": "cloud",
+      "mean": 0.875,
+      "n": 8
+    },
+    {
+      "category": "reasoning",
+      "architecture": "deciding",
+      "deployment": "local",
+      "mean": 0.625,
+      "n": 8
+    },
+    {
+      "category": "reasoning",
+      "architecture": "routing",
+      "deployment": "cloud",
+      "mean": 0.5,
+      "n": 8
+    },
+    {
+      "category": "reasoning",
+      "architecture": "routing",
+      "deployment": "local",
+      "mean": 0.5,
+      "n": 8
+    },
+    {
+      "category": "robustness",
+      "architecture": "deciding",
+      "deployment": "cloud",
+      "mean": 0.875,
+      "n": 8
+    },
+    {
+      "category": "robustness",
+      "architecture": "deciding",
+      "deployment": "local",
+      "mean": 0.5,
+      "n": 8
+    },
+    {
+      "category": "robustness",
+      "architecture": "routing",
+      "deployment": "cloud",
+      "mean": 0.875,
+      "n": 8
+    },
+    {
+      "category": "robustness",
+      "architecture": "routing",
+      "deployment": "local",
+      "mean": 0.375,
+      "n": 8
+    },
+    {
+      "category": "trivial",
+      "architecture": "deciding",
+      "deployment": "cloud",
+      "mean": 0.875,
+      "n": 8
+    },
+    {
+      "category": "trivial",
+      "architecture": "deciding",
+      "deployment": "local",
+      "mean": 0.875,
+      "n": 8
+    },
+    {
+      "category": "trivial",
+      "architecture": "routing",
+      "deployment": "cloud",
+      "mean": 0.875,
+      "n": 8
+    },
+    {
+      "category": "trivial",
+      "architecture": "routing",
+      "deployment": "local",
+      "mean": 0.875,
+      "n": 8
+    }
+  ]
+}

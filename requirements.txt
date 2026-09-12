@@ -1,0 +1,19 @@
+# Pinned so a re-run reproduces the same interval and the same test
+# statistic, not merely the same method. Protocol §11.
+#
+# Recorded 2026-08-19, the versions the apparatus was built and smoke-tested
+# against. Python 3.13.11 on Windows 11.
+
+# The model seam.
+anthropic>=0.40.0,<1.0.0        # cloud provider (0.122.0)
+requests>=2.31,<3               # local provider talks raw HTTP to Ollama
+
+# The analysis (protocol §9, as amended).
+numpy>=2.0,<3                   # 2.5.2
+scipy>=1.13,<2                  # 1.18.0
+pandas>=2.2,<3                  # 2.3.3
+statsmodels>=0.14,<1            # 0.14.6 — binomial GEE clustered on task
+
+# Not a dependency, but part of the environment a re-run needs:
+#   ollama, with `llama3.1:8b` pulled (4.9 GB)
+#   ANTHROPIC_API_KEY in the environment for the two cloud cells

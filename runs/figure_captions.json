@@ -1,0 +1,59 @@
+{
+  "fig03_three_way_frame": [
+    "bold",
+    "spans zero (\u00a74.3), so the first panel is what the study rules out."
+  ],
+  "fig05_contrasts": [
+    "Every pairing moves exactly one switch, so a difference inside a "
+  ],
+  "fig06_designs_as_code": [
+    "result back in front of the model. The routing design has no equivalent of either, "
+  ],
+  "fig09_scoring_lanes": [
+    "reads the ideal decision. A disputed ideal cannot move the headline ",
+    "blinded case, and building one from a row carrying them fails (\u00a73.7)."
+  ],
+  "fig10_agreement": [
+    ", color=INK if strong else MUTED, fontsize=8.8,\n                fontweight="
+  ],
+  "fig11_run_ledger": [
+    "Four further rows exist and are not among the 960: one warm-up turn ",
+    "costs nothing per request. Per-configuration time and cost are reported in \u00a74.8."
+  ],
+  "fig12_resampling": [
+    ", xy=(14 + (lo + 3.2) / 6.4 * 72, 29),\n                xytext=(14 + (hi + 3.2) / 6.4 * 72, 29),\n                arrowprops=dict(arrowstyle=",
+    "replies counting as five observations. The generator, the seed "
+  ],
+  "fig14_validity_gate": [
+    "One category fell through the floor, and the gate was honored",
+    "high score there is not a sign of a broken task set. The criterion "
+  ],
+  "fig16_interaction": [
+    ", xy=(xi, m[top]), xytext=(xi, m[bot]),\n                    arrowprops=dict(arrowstyle="
+  ],
+  "fig20_coding_robustness": [
+    "The rule chosen in advance is the one that cuts against the ",
+    "Partial credit is worth about five times as much to the routing "
+  ],
+  "fig22_decision_vs_success": [
+    "At cloud, the two designs judge {abs(decision['C1'] - decision['C3']):.3f} apart ",
+    "The advantage is recovery, not better judgment",
+    "240 runs per configuration; 960 in total. Decision accuracy is scored on "
+  ],
+  "fig28_cost_of_the_advantage": [
+    "Both arrows point up and to the right",
+    "240 runs per configuration; 960 in all. Latency is the median, "
+  ],
+  "fig29_compensation_ladder": [
+    "",
+    "Filled bars mark the three intervals that clear zero; all three are negative and all three "
+  ],
+  "fig30_ablation": [
+    "",
+    "so the design becomes indistinguishable from routing. Removing either other property leaves the "
+  ],
+  "fig31_routing_inversion": [
+    "",
+    "accuracy orders correctly under both. The cause is the routing design's rule that whatever an "
+  ]
+}

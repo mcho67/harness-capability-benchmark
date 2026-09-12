@@ -1,0 +1,150 @@
+{
+  "source": "runs\\full-2026-08-20\\scored.jsonl",
+  "resamples": 5000,
+  "seed": 20260819,
+  "task_counts": {
+    "all": 48,
+    "pre_existing": 22,
+    "study_written": 26
+  },
+  "category_mix": {
+    "action": {
+      "study_written": 7,
+      "pre_existing": 1
+    },
+    "clarification": {
+      "study_written": 5,
+      "pre_existing": 3
+    },
+    "grounding": {
+      "study_written": 3,
+      "pre_existing": 5
+    },
+    "reasoning": {
+      "study_written": 3,
+      "pre_existing": 5
+    },
+    "robustness": {
+      "study_written": 4,
+      "pre_existing": 4
+    },
+    "trivial": {
+      "study_written": 4,
+      "pre_existing": 4
+    }
+  },
+  "codings": {
+    "success_strict": {
+      "all": {
+        "point": -0.04583333333333334,
+        "ci_low": -0.1958333333333333,
+        "ci_high": 0.10000000000000003,
+        "resamples": 5000,
+        "resamples_requested": 5000,
+        "n_tasks_resampled": 48,
+        "unit": "task (with all repetitions attached)",
+        "cell_means": {
+          "C1": 0.8375,
+          "C2": 0.5208333333333334,
+          "C3": 0.6583333333333333,
+          "C4": 0.3875
+        },
+        "n_runs": 960
+      },
+      "pre_existing": {
+        "point": 0.036363636363636376,
+        "ci_low": -0.20000000000000007,
+        "ci_high": 0.2727272727272727,
+        "resamples": 5000,
+        "resamples_requested": 5000,
+        "n_tasks_resampled": 22,
+        "unit": "task (with all repetitions attached)",
+        "cell_means": {
+          "C1": 0.9181818181818182,
+          "C2": 0.5909090909090909,
+          "C3": 0.7090909090909091,
+          "C4": 0.34545454545454546
+        },
+        "n_runs": 440
+      },
+      "study_written": {
+        "point": -0.11538461538461536,
+        "ci_low": -0.3076923076923077,
+        "ci_high": 0.07692307692307687,
+        "resamples": 5000,
+        "resamples_requested": 5000,
+        "n_tasks_resampled": 26,
+        "unit": "task (with all repetitions attached)",
+        "cell_means": {
+          "C1": 0.7692307692307693,
+          "C2": 0.46153846153846156,
+          "C3": 0.6153846153846154,
+          "C4": 0.4230769230769231
+        },
+        "n_runs": 520
+      },
+      "halves_differ": {
+        "difference": -0.15174825174825177,
+        "ci_low": -0.45945804195804196,
+        "ci_high": 0.15596153846153823,
+        "direction": "study_written minus pre_existing"
+      }
+    },
+    "success_lenient": {
+      "all": {
+        "point": -0.04166666666666663,
+        "ci_low": -0.19166666666666665,
+        "ci_high": 0.11250000000000004,
+        "resamples": 5000,
+        "resamples_requested": 5000,
+        "n_tasks_resampled": 48,
+        "unit": "task (with all repetitions attached)",
+        "cell_means": {
+          "C1": 0.8541666666666666,
+          "C2": 0.5416666666666666,
+          "C3": 0.7416666666666667,
+          "C4": 0.4708333333333333
+        },
+        "n_runs": 960
+      },
+      "pre_existing": {
+        "point": -0.009090909090909094,
+        "ci_low": -0.23636363636363633,
+        "ci_high": 0.2090909090909091,
+        "resamples": 5000,
+        "resamples_requested": 5000,
+        "n_tasks_resampled": 22,
+        "unit": "task (with all repetitions attached)",
+        "cell_means": {
+          "C1": 0.9181818181818182,
+          "C2": 0.5909090909090909,
+          "C3": 0.7090909090909091,
+          "C4": 0.39090909090909093
+        },
+        "n_runs": 440
+      },
+      "study_written": {
+        "point": -0.0692307692307692,
+        "ci_low": -0.2692307692307693,
+        "ci_high": 0.14634615384615096,
+        "resamples": 5000,
+        "resamples_requested": 5000,
+        "n_tasks_resampled": 26,
+        "unit": "task (with all repetitions attached)",
+        "cell_means": {
+          "C1": 0.8,
+          "C2": 0.5,
+          "C3": 0.7692307692307693,
+          "C4": 0.5384615384615384
+        },
+        "n_runs": 520
+      },
+      "halves_differ": {
+        "difference": -0.060139860139860155,
+        "ci_low": -0.3692657342657343,
+        "ci_high": 0.25947552447552397,
+        "direction": "study_written minus pre_existing"
+      }
+    }
+  }
+}

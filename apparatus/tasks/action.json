@@ -1,0 +1,237 @@
+[
+  {
+    "id": "act-01",
+    "category": "action",
+    "difficulty": 1,
+    "origin": "frozen_v1",
+    "turns": [
+      "find my resume file"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "search_files"
+    ],
+    "expected_length": [
+      3,
+      30
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "runs a file search for the resume rather than answering from nothing or reaching for a web search"
+    },
+    "moves": "ARCHITECTURE (decision) — the simplest tool pick. One obviously correct action, so a wrong tool here is a decision failure and nothing else.",
+    "fixtures": [
+      "documents"
+    ],
+    "fixtures_why": "needs exactly one resume to find"
+  },
+  {
+    "id": "act-09",
+    "category": "action",
+    "difficulty": 1,
+    "origin": "frozen_v1, rewritten 2026-08-19",
+    "turns": [
+      "make a note that the wifi password is hunter2"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "add_note"
+    ],
+    "expected_length": [
+      3,
+      25
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "records the note with the password text; a side-effect check confirms the note exists"
+    },
+    "moves": "ARCHITECTURE (decision) — a single unambiguous write. Pairs with act-10: same shape, but only one acceptable tool, so it separates 'picked a tool' from 'picked among near neighbours'.",
+    "replaces": "act-02",
+    "rewritten_because": "The original was 'what's on my screen right now?' (read_screen). The screen surface is removed from the apparatus under CHARTER §4 'no surface', so the task could not run. Filed as a new id rather than reusing act-02: the replacement is a different task, and ids are join keys that must stay stable.",
+    "fixtures": []
+  },
+  {
+    "id": "act-10",
+    "category": "action",
+    "difficulty": 2,
+    "origin": "frozen_v1, rewritten 2026-08-19",
+    "turns": [
+      "remember that my sister's birthday is March 4th"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "remember",
+      "add_note"
+    ],
+    "expected_length": [
+      3,
+      25
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "stores the fact durably by either route; a side-effect check confirms it is retrievable"
+    },
+    "moves": "ARCHITECTURE (decision) — two genuinely acceptable tools for one request. This is the task that exercises `tool_any`: a scorer demanding a single right answer would mark half the correct behaviour wrong.",
+    "replaces": "act-03",
+    "rewritten_because": "The original was 'open Spotify and play some jazz' (operate_app / deep_action). Both are removed under CHARTER §4 'no surface'. Filed as a new id rather than reusing act-03: the replacement is a different task, and ids are join keys that must stay stable.",
+    "fixtures": []
+  },
+  {
+    "id": "act-11",
+    "category": "action",
+    "difficulty": 2,
+    "origin": "authored 2026-08-19",
+    "turns": [
+      "delete the file called draft-old.txt"
+    ],
+    "properties": [
+      "well_specified"
+    ],
+    "tool_any": [
+      "delete_file"
+    ],
+    "expected_length": [
+      3,
+      25
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "deletes the named file; asking for confirmation first is over-asking and scores as a decision miss, though the task can still succeed"
+    },
+    "moves": "ARCHITECTURE (over-asking) — the deliberate counterpart to clar-07. Both are destructive; clar-07 is underspecified and the ideal is to ask, this one is fully specified and the ideal is to act. The routing arm's confirmation gate fires on *risk level*, not on whether the request was specified (orchestrator.py:370-392), so the pair separates asking-when-it-should from asking-when-it-should-not. Neither direction is predicted; the contrast is what makes it measurable.",
+    "fixtures": [
+      "draft_file"
+    ],
+    "fixtures_why": "needs draft-old.txt to exist, plus a second draft it must not touch"
+  },
+  {
+    "id": "act-12",
+    "category": "action",
+    "difficulty": 3,
+    "origin": "frozen_v1, rewritten 2026-08-19",
+    "turns": [
+      "search my documents for every file that mentions 'invoice' and list them"
+    ],
+    "properties": [
+      "well_specified",
+      "long_running"
+    ],
+    "tool_any": [
+      "search_files"
+    ],
+    "expected_length": [
+      10,
+      90
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "runs the search across the document tree and reports what it found"
+    },
+    "moves": "ARCHITECTURE (backgrounding) — a single correct tool, but an operation slow enough that dispatching it and blocking on it are visibly different choices. Background = full credit, blocking-but-completing = partial.",
+    "replaces": "act-05",
+    "rewritten_because": "The original was 'research the offshore wind energy market' (web_search / research). Network-dependent tools are removed under CHARTER §4 as nondeterministic — a task whose answer changes with the live web cannot be scored the same way twice, and reproducibility is the point of the freeze. The replacement keeps the long-running property on a deterministic local operation. Filed as a new id rather than reusing act-05: the replacement is a different task, and ids are join keys that must stay stable.",
+    "fixtures": [
+      "documents"
+    ],
+    "fixtures_why": "needs files mentioning 'invoice' in content, not filename"
+  },
+  {
+    "id": "act-13",
+    "category": "action",
+    "difficulty": 3,
+    "origin": "authored 2026-08-19",
+    "turns": [
+      "find the budget file and tell me when it was last modified"
+    ],
+    "properties": [
+      "well_specified",
+      "multi_step"
+    ],
+    "tool_any": [
+      "search_files",
+      "list_files"
+    ],
+    "expected_length": [
+      5,
+      40
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "locates the file and reports its modification time; reporting one without the other is partial"
+    },
+    "moves": "ARCHITECTURE (decompose) — the smallest genuine two-step goal: locate, then inspect. Both steps sit inside one tool family, so it tests sequencing without also testing tool breadth.",
+    "fixtures": [
+      "documents"
+    ],
+    "fixtures_why": "needs exactly one file matching 'budget', with a fixed mtime"
+  },
+  {
+    "id": "act-14",
+    "category": "action",
+    "difficulty": 4,
+    "origin": "authored 2026-08-19",
+    "turns": [
+      "add up the numbers in my expenses note and tell me the total"
+    ],
+    "properties": [
+      "well_specified",
+      "multi_step"
+    ],
+    "tool_any": [
+      "show_notes",
+      "quick_math"
+    ],
+    "expected_length": [
+      4,
+      35
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "retrieves the note and reports the correct arithmetic total"
+    },
+    "moves": "ARCHITECTURE (decompose across tools) — two steps in two different tool families, where the second depends on the output of the first. The clearest test of whether a design can chain, as opposed to route once.",
+    "fixtures": [
+      "notes_seeded"
+    ],
+    "fixtures_why": "needs the expenses note (total 47)"
+  },
+  {
+    "id": "act-15",
+    "category": "action",
+    "difficulty": 5,
+    "origin": "frozen_v1, rewritten 2026-08-19",
+    "turns": [
+      "go through my notes, pull out everything about the Q3 budget, and save that as a new note"
+    ],
+    "properties": [
+      "well_specified",
+      "multi_step",
+      "long_running"
+    ],
+    "tool_any": [
+      "show_notes",
+      "add_note"
+    ],
+    "expected_length": [
+      5,
+      45
+    ],
+    "success": {
+      "type": "rubric",
+      "criteria": "reads the existing notes, selects the Q3 budget material, and creates a new note containing it; a side-effect check confirms the new note exists and is non-empty"
+    },
+    "moves": "SHOWCASE — the only task carrying all three of multi_step, long_running and a write side effect. Read, filter, write, and long enough that blocking is a visible choice. It replaces the inherited showcase task without needing the network.",
+    "replaces": "act-04",
+    "rewritten_because": "The original act-04 ('message Phil on Discord') and act-05 ('research the offshore wind market') both depended on removed tools — deep_action GUI automation and network search respectively. This task preserves what the showcase was for: an ideal decision that requires decomposing *and* backgrounding at once. Filed as a new id rather than reusing act-08: the replacement is a different task, and ids are join keys that must stay stable.",
+    "fixtures": [
+      "notes_seeded"
+    ],
+    "fixtures_why": "needs existing notes, two of them about Q3 budget"
+  }
+]

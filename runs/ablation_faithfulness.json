@@ -1,0 +1,16 @@
+{
+  "verdict": "PASS",
+  "method": "frozen arm run twice for a noise floor, then the rewrite; all three in one session on one machine",
+  "model": "llama3.1:8b",
+  "compared_fields": [
+    "reply",
+    "tools_called",
+    "iterations"
+  ],
+  "tasks_run": 48,
+  "tasks_excluded_noise_floor": [
+    "triv-01"
+  ],
+  "tasks_scored": 47,
+  "mismatches": []
+}
