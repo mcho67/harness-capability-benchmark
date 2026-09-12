@@ -1,92 +1,99 @@
 # The Harness–Capability Benchmark
 
-The instrument, the task set, both registration documents and every result row
-behind *A pre-registered 2×2 factorial crossing harness design with model
-deployment in personal AI assistants*.
+A fixed comparison that puts one question to any pair of models: **when the
+model gets weaker, does a better-built harness buy back more?**
 
-The paper asks one question. When a personal assistant has to run on the
-user's own device, and the model available there is weaker than the one in the
-cloud, how much of that loss does a better-built harness buy back? It crosses
-two factors — **harness design** (routing or deciding) against **deployment**
-(cloud or on-device) — over 48 tasks, and measures whether the design is worth
-more where the model is weaker.
+It runs 48 tasks through two harness designs — **routing**, where the model
+names one action and whatever that action returns is the reply the user reads,
+and **deciding**, where the model sees each result and may act again — and
+reports the difference between what the design is worth with a strong model
+and what it is worth with a weak one.
 
-It is not. The deciding design is worth **+0.179** in the cloud and **+0.133**
-on the device; the difference between those, which is the quantity the study
-exists to measure, is **−0.046** with a 95% interval of [−0.196, +0.100]. A
-second study widened the comparison to twelve pairings of six on-device models
-against two cloud models and left it there.
+Run against six on-device models and two cloud ones, the answer was no: the
+deciding design is worth **+0.179** in the cloud and **+0.133** on a laptop,
+and the difference between those is **−0.046**, interval [−0.196, +0.100].
+Whether that holds for your models is the thing this repository exists to let
+you find out.
 
-Everything needed to check those numbers is here.
+## Run it on your own models
 
-## What is in it
+Two models, one you think is stronger and one you think is weaker.
 
-| | |
-|---|---|
-| `apparatus/` | the instrument. `arms/` holds the two designs, one file each; `tasks/` holds the 48 tasks and the rules that derive each one's ideal decision; `core/` holds the simulated computer and the 21 actions the assistant can call |
-| `runs/` | every result row from both studies, scored. 960 runs in `full-2026-08-20/`, 2,592 in `study2/`, and the pilot that set the task set in `pilot-2026-08-19/` |
-| `tools/` | the analysis. Every number in the paper comes out of one of these |
-| `figures/` | every figure in the paper, and the script that draws it from the result rows |
-| `protocol.md` | Study 1's pre-registration, written 2026-06-18, two months before the run |
-| `protocol_ext.md` | Study 2's registration, written 2026-09-04, before any of its data existed |
+```
+pip install -r requirements.txt
+python tools/run_study2.py --plan        # prints what it will do, runs nothing
+```
 
-## Checking a number
+The model list is `SWEEP_MODELS` in `tools/run_study2.py`, a list of
+`(name, provider)` pairs. Replace it with yours. `"ollama"` runs locally
+through [Ollama](https://ollama.com) and costs nothing; `"anthropic"` needs
+`ANTHROPIC_API_KEY`.
 
-Install what the instrument needs — `pip install -r requirements.txt` — and
-then:
+```
+python tools/run_study2.py --sweep --on-device   # local models, free
+python tools/run_study2.py --sweep --cloud       # ~$1.25 for two models
+python tools/run_study2.py --score               # grade the replies, ~$2.80
+python tools/analyze_study2.py                   # the contrast, per pairing
+```
+
+Each configuration is 48 tasks × 3 repetitions = 144 runs and writes its own
+file, so it resumes safely if you stop it. A local 7B model takes about an
+hour per configuration; a cloud model takes minutes.
+
+**What you get back** is one number per pairing: how much more, or less, the
+deciding design is worth with the weaker model than with the stronger one.
+Positive means the harness compensates. Negative means it does not.
+
+Any model that can be asked for a tool call will run. A model that cannot —
+or that describes actions instead of taking them, which `mistral:7b` did here
+— produces two configurations that are the same procedure under two labels,
+and the analysis will say so.
+
+## Check the numbers in the paper
+
+Nothing here re-runs a model, so all four finish in minutes and cost nothing.
 
 ```
 python tools/analyze_study2.py          # the twelve pairings, the slope, the ablations
 python tools/power_and_equivalence.py   # the power curve and the equivalence test
 python tools/provenance_split.py        # the contrast on tasks that predate the study
-python tools/grader_crosscheck.py       # the second grader, and agreement with the first
+python tools/grader_crosscheck.py       # the two graders, and how far they agree
 ```
 
-Each reads the scored rows in `runs/` and writes its report beside them. None
-of them re-runs a model, so all four finish in minutes and none of them costs
-anything.
+Each reads the scored rows in `runs/` and rewrites its report beside them. If
+your run reproduces this repository, the files come back byte-identical.
 
-**Re-running the experiment itself** needs an Anthropic API key for the cloud
-half and [Ollama](https://ollama.com) for the on-device half. `tools/run_study2.py`
-does it. The 960 runs of Study 1 took an afternoon; the 2,592 of Study 2 took
-a night.
+## What is here
 
-## Reading the two registrations
-
-They are the reason the result is worth anything, so they are here in full
-rather than summarised.
-
-`protocol.md` fixes Study 1's hypothesis, its measures, its thresholds and its
-analysis, and it does so **without asserting a direction** — the published work
-is split on which way the effect should run, so assuming one would have been
-both dishonest and unnecessary. `protocol_ext.md` does the same for Study 2,
-and is explicit that its predictions were formed after Study 1's result was
-known and so cannot claim the same standing.
-
-Both record every departure from them, with dates. One of those departures
-changed a number the paper reports: the interval on the registered slope was
-first computed by resampling the six pairings rather than the 48 tasks the
-registration named, which made it exclude zero. On the registered unit it
-covers zero. The correction is in `protocol_ext.md` §7, item 3.
+| | |
+|---|---|
+| `apparatus/` | the instrument. `arms/` holds the two designs, one file each; `tasks/` holds the 48 tasks and the rules that derive each one's ideal decision; `core/` holds the simulated computer and the 21 actions |
+| `runs/` | every result row from both studies, scored — 960 runs in `full-2026-08-20/`, 2,592 in `study2/` |
+| `tools/` | the runner and the analysis |
+| `figures/` | every figure, and the script that draws it from the rows |
+| `protocol.md` | Study 1's pre-registration, 2026-06-18 |
+| `protocol_ext.md` | Study 2's registration, 2026-09-04 |
 
 ## The tasks
 
-48 tasks in six categories. **22 of them predate this study** and could not
-have been shaped by its hypotheses; 5 are adapted from that older set and 21
-were written for this experiment. Every task records which it is, and
-`tools/provenance_split.py` recomputes the headline on each half.
+48 tasks in six categories, frozen at sha256
+`0a3ae35b1ac8343b13880f01393b82960ff6bfe2e5c5927739424b623c1d85b3`, and that
+hash is on every data row. Each carries its own written standard for what
+counts as done, fixed when the task was written.
 
-The set is frozen at sha256 `0a3ae35b1ac8343b13880f01393b82960ff6bfe2e5c5927739424b623c1d85b3`,
-and that hash is carried on every one of the 960 data rows.
+Both registrations record every departure from them. One of those changed a
+number: the interval on the registered slope was first computed by resampling
+the six pairings rather than the 48 tasks the registration named, which made
+it exclude zero; on the registered unit it covers zero. `protocol_ext.md` §7,
+item 3.
 
-## What is deliberately not here
+## The paper
 
-The paper's drafts, its figure captions as prose, and the working notes behind
-the writing. A reader checking a number needs the protocol, the code and the
-rows; the rest is how the paper was made, and putting it in a repository the
-paper cites would invite reading it as part of the paper.
+*A pre-registered 2×2 factorial crossing harness design with model deployment
+in personal AI assistants*, submitted to the S.-T. Yau High School Science
+Award, September 2026. It will be linked here once it can be.
 
-## Licence
+## Rights
 
-The code is released for inspection and re-use. The task set and the result
-rows are the study's data and are offered on the same terms.
+Published so the results in the paper can be checked and so the comparison can
+be re-run. Rights are otherwise reserved; contact the author about re-use.
