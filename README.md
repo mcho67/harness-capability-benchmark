@@ -89,9 +89,20 @@ item 3.
 
 ## The paper
 
-*A pre-registered 2×2 factorial crossing harness design with model deployment
-in personal AI assistants*, submitted to the S.-T. Yau High School Science
-Award, September 2026. It will be linked here once it can be.
+[`paper.pdf`](paper.pdf) — *A pre-registered 2×2 factorial crossing harness
+design with model deployment in personal AI assistants*, 96 pages, submitted
+to the S.-T. Yau High School Science Award in September 2026.
+
+This is the submitted paper with the supervisor's name, the school, and the
+names inside the signature block removed. Nothing else differs: 93 of its 96
+pages are character-identical to the version submitted, and the declaration of
+AI assistance is reproduced in full.
+
+The tag `paper-2026-09` was cut before the paper was added here, so it points
+at the instrument, the tasks and the runs rather than at this file. That is
+deliberate — the tag is what §3.4 of the paper names as the state every number
+was checked against, and adding a document to the repository must not change
+what that tag resolves to.
 
 ## Rights
 
